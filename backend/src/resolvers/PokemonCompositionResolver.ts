@@ -2,7 +2,7 @@ import { Arg, Mutation, Query, Resolver } from "type-graphql";
 import { PokemonComposition } from "../models/PokemonComposition";
 import crypto from "crypto";
 
-Resolver()
+@Resolver()
 export class PokemonCompositionResolver {
   private data: PokemonComposition[] = [];
  
@@ -12,7 +12,11 @@ export class PokemonCompositionResolver {
   }
 
   @Mutation(() => PokemonComposition)
-  async createPokemonComposition({ name, image, type }: PokemonComposition) {
+  async createPokemonComposition(
+    @Arg("name") name: string,
+    @Arg("image") image: string,
+    @Arg("type") type: string,
+  ) {
     const pokemonComposition = {
       id: crypto.randomUUID(),
       name,
@@ -22,6 +26,6 @@ export class PokemonCompositionResolver {
 
     this.data.push(pokemonComposition);
 
-    return;
+    return pokemonComposition;
   }
 }
