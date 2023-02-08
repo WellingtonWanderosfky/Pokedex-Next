@@ -1,0 +1,17 @@
+.ContainerHeader{
+    display: flex;
+    position: absolute;
+    width: 100vw;
+    align-items: center;
+    justify-content: space-between;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 1024px;
+    margin-top: 24px;
+}
+.buttonLogo, .buttonLinkedin{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    outline: none;
+}
