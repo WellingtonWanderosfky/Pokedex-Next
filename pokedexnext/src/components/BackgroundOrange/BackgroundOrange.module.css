@@ -12,7 +12,6 @@
 }
 
 .pokeballBackgroundRight{
-    /* right: -10px; */
     position: absolute;
     transform: scaleX(-1);
 }

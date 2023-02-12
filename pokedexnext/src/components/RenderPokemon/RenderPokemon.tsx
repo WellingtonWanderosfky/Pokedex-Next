@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import CardPokemon from "../CardPokemon/CardPokemon";
 import requestPokemon from "./utils/requestPokemon";
 
 interface Pokemon{
@@ -26,11 +27,7 @@ const  RenderPokemon =  () => {
         <div>
             {result.map((pokemon, index) => {
                 return (
-                    <div key={index}>
-                        <h1>{pokemon.name}</h1>
-                        pokemon.,
-                        <img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${index + 1}.png`} />
-                    </div>
+                    <CardPokemon url={pokemon.url} name={pokemon.name} key={index}></CardPokemon> 
                 )
             })}
         </div>
