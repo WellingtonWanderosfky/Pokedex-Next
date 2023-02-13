@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import CardPokemon from "../CardPokemon/CardPokemon";
+import styles from "./RenderPokemon.module.css";
 import requestPokemon from "./utils/requestPokemon";
 
 interface Pokemon{
@@ -10,7 +11,7 @@ interface Pokemon{
 const  RenderPokemon =  () => {
 
     const [result, setResult] = useState<Pokemon[]>([]);
-    const maxPokemon = 9;
+    const maxPokemon = 50;
 
     useEffect(() => {
         const pokemonData = async () =>{
@@ -18,13 +19,12 @@ const  RenderPokemon =  () => {
             setResult(result?.results ?? []);
         } 
         pokemonData();
-  
     }, []);
 
     //
 
     return (
-        <div>
+        <div className={styles.containerRenderPokemons}>
             {result.map((pokemon, index) => {
                 return (
                     <CardPokemon url={pokemon.url} name={pokemon.name} key={index}></CardPokemon> 
