@@ -1,4 +1,32 @@
-.ContainerPokemonSelect{}
+.ContainerPokemonSelect{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 1217px;
+  width: 100%;
+}
+
+.ContainerOne, .ContainerThree {
+  width: 45%;
+}
+
+.ContainerTwo{
+  width: 10%;
+}
+
+
+.ContainerTwo{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+
+}
+
+.RectangleOne{
+  transform: scaleY(-1);
+}
 
 .titlePokemon{
   font-family: "Montserrat",sans-serif;
@@ -18,5 +46,27 @@
   line-height: 24px;
   letter-spacing: 0em;
   text-align: left;
+  max-width: 410px;
 
+}
+
+.buttonPokemon{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 12px 0px;
+  gap: 8px;
+  background: #FFFFFF;
+  border: 2px solid #FFFFFF;
+  border-radius: 8px;
+  width: 100%;
+  margin-top: 24px;
+  color: #E14318;
+  font-family: Montserrat;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  letter-spacing: 0em;
+  text-align: left;
 }

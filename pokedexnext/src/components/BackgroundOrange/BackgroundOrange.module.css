@@ -5,3 +5,13 @@
     align-items: center;
     justify-content: center;
 }
+
+.pokeballBackground{
+    left: -10px;
+    position: absolute;
+}
+
+.pokeballBackgroundRight{
+    position: absolute;
+    transform: scaleX(-1);
+}
