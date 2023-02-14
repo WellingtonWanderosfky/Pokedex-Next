@@ -1,11 +1,10 @@
-
-const TypesPokemons = () => {
-  return (
-    <div>
-      
-    </div>
-  )
+.buttonContainer{
+  color: #fff;
+  border-radius: 8px;
+  padding: 5px 9px;
+  gap: 5px;
+  display: flex;
+  place-self: center;
+  margin-top: 10px;
+  border: none;
 }
-
-export default TypesPokemons
-
