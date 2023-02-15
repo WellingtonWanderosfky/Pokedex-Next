@@ -17,3 +17,13 @@
     right: 0;
 
 }
+
+@media (max-width: 1200px){
+    .containerHomePrincipal{
+        height: 100%;
+        padding: 0 32px;
+    }
+    .pokeballBackground , .pokeballBackgroundRight{
+        display: none;
+    }
+}

@@ -15,7 +15,7 @@ export default function PokemonSelect() {
       <div className={styles.ContainerTwo}>
         <img className={styles.RectangleOne} src="Rectangle.svg" alt="Rectangle"/>
         <img src="divider-fire.svg" alt="Fire Driver"/>
-        <img src="Rectangle.svg" alt="Rectangle"/>
+        <img className={styles.RectangleTwo} src="Rectangle.svg" alt="Rectangle"/>
       </div>
 
       <div className={styles.ContainerThree}>
