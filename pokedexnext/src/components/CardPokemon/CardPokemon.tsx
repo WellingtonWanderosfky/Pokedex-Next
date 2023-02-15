@@ -2,6 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import TypesPokemons from "../TypesPokemons/TypesPokemons";
 import styles from "./CardPokemon.module.css";
+import Blur from "./effects/blur";
 import { Pokemonrequest } from "./typings/RequestPokemon";
 
 interface CardPokemonProps {
@@ -39,20 +40,21 @@ const CardPokemon = ({ name, url }: CardPokemonProps) => {
 
   return (
     <div className={styles.containerPokemon}>
-      {/* Aqui colocar a imagem do pokemon: */}
-      <img src={srcImg} alt="pokemon" width="100px" height="100px" />
+      <img src={srcImg} alt="pokemon" width="100px" height="100px"/>
       <div className={styles.containerText}>
         <span>#{id}</span>
         <h2 className={styles.titlePokemon}>{name}</h2>
         <span>{type}</span>
-        {loading ? <p>Carregando...</p> : <TypesPokemons typePokemon={type} />}
-        
+        {loading ? <p>Carregando...</p> :  <TypesPokemons typePokemon={type} />}
       </div>
 
       <button className={styles.buttonMaisDetalhes}>
         <img src="icon-bolt-white.svg" width="24px" height="24px" />
         <p>Mais detalhes</p>
       </button>
+      {loading ? <p>Carregando...</p> :  <Blur typesPokemon={type}></Blur>}
+      
+
     </div>
   );
 };
