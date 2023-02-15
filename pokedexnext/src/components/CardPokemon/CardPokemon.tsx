@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import ButtonDetalhes from "../ButtonDetalhes/ButtonDetalhes";
 import TypesPokemons from "../TypesPokemons/TypesPokemons";
 import styles from "./CardPokemon.module.css";
 import Blur from "./effects/blur";
@@ -18,16 +19,19 @@ const CardPokemon = ({ name, url }: CardPokemonProps) => {
   const [loading, setLoading] = useState<boolean>(true);
 
   const resultPokemon = async () => {
-    const result = await axios.get(url).then((response) => {
-      const dataRespost : Pokemonrequest = response.data;
-      setResult(response.data);
-      console.log("response.data",response.data);
-      setSrcImg(dataRespost.sprites.other["official-artwork"].front_default)
-      setId(dataRespost.id);
-      setType(dataRespost.types[0].type.name);
-    }).finally(() => {
+    const result = await axios
+      .get(url)
+      .then((response) => {
+        const dataRespost: Pokemonrequest = response.data;
+        setResult(response.data);
+        console.log("response.data", response.data);
+        setSrcImg(dataRespost.sprites.other.home.front_default);
+        setId(dataRespost.id);
+        setType(dataRespost.types[0].type.name);
+      })
+      .finally(() => {
         setLoading(false);
-    });
+      });
     return result;
   };
 
@@ -35,26 +39,31 @@ const CardPokemon = ({ name, url }: CardPokemonProps) => {
     resultPokemon();
   }, []);
 
-  console.log("result:",result)
-
+  console.log("result:", result);
 
   return (
-    <div className={styles.containerPokemon}>
-      <img src={srcImg} alt="pokemon" width="100px" height="100px"/>
-      <div className={styles.containerText}>
-        <span>#{id}</span>
-        <h2 className={styles.titlePokemon}>{name}</h2>
-        <span>{type}</span>
-        {loading ? <p>Carregando...</p> :  <TypesPokemons typePokemon={type} />}
+    <div className={styles.containerCard}>
+      <img
+          className={styles.containerImg}
+          src={srcImg}
+          alt="pokemon"
+          width="100px"
+          height="100px"
+        />
+      <div className={styles.containerPokemon}>
+        <div className={styles.containerText}>
+          <span className={styles.spanId}>#{id}</span>
+          <h2 className={styles.titlePokemon}>{name}</h2>
+          <span>{type}</span>
+          {loading ? (
+            <p>Carregando...</p>
+          ) : (
+            <TypesPokemons typePokemon={type} />
+          )}
+        </div>
+        {loading ? <p>Carregando...</p> : <ButtonDetalhes typePokemon={type}></ButtonDetalhes>}
+        {loading ? <p>Carregando...</p> : <Blur typesPokemon={type}></Blur>}
       </div>
-
-      <button className={styles.buttonMaisDetalhes}>
-        <img src="icon-bolt-white.svg" width="24px" height="24px" />
-        <p>Mais detalhes</p>
-      </button>
-      {loading ? <p>Carregando...</p> :  <Blur typesPokemon={type}></Blur>}
-      
-
     </div>
   );
 };

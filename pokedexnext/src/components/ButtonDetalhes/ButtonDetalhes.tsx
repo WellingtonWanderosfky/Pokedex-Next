@@ -1,10 +1,10 @@
 
-import styles from "./TypesPokemons.module.css";
+import styles from "./ButtonDetalhes.module.css";
 interface TypesPokemonsProps {
     typePokemon: string;
 }
 
-const TypesPokemons = ({typePokemon} : TypesPokemonsProps) => {
+const ButtonDetalhes = ({typePokemon} : TypesPokemonsProps) => {
     console.log("typePokemon:",typePokemon);
     const types = [
         {
@@ -76,13 +76,13 @@ const TypesPokemons = ({typePokemon} : TypesPokemonsProps) => {
 
       if(!currentType) return <></>
       
-      const {title,imageUrl , color } = currentType;
+      const { color } = currentType;
       
-      return <button style={{backgroundColor : color}} className={styles.buttonContainer}>
-        <img src={imageUrl}></img>
-        {title}
-        </button>
+      return <button style={{backgroundColor : color}} className={styles.buttonMaisDetalhes}>
+        <img src="icon-bolt-white.svg" width="24px" height="24px" />
+        <p>Mais detalhes</p>
+    </button>
 }
 
-export default TypesPokemons
+export default ButtonDetalhes;
 

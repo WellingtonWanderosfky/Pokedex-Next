@@ -1,0 +1,25 @@
+.buttonMaisDetalhes{
+  appearance: none;
+  display: flex;
+  align-items: center;
+  color: #fff;
+  width: 100%;
+  font-family: Montserrat;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  letter-spacing: 0em;
+  text-align: left;
+  justify-content: center;
+  height: 48px;
+  border-radius: 0px 0px 24px 24px;
+  padding: 12px;
+  z-index: 2;
+  border: none;
+  outline: none;
+}
+
+.buttonMaisDetalhes:hover{
+  cursor: pointer;
+  filter: contrast(0.7) brightness(1.2);
+}

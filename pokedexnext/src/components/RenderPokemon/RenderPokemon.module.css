@@ -3,8 +3,16 @@
     grid-template-columns: repeat(3,1fr);
     justify-content: center;
     justify-items: center;
-    row-gap: 32px;
+    row-gap: 160px;
     column-gap: 32px;
-    padding-top: 32px;
+    padding-top: 150px;
     padding-bottom: 32px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+@media (max-width: 1200px){
+    .containerRenderPokemons{
+        grid-template-columns: 1fr;
+    }
 }
