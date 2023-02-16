@@ -10,9 +10,9 @@ interface requestPokemonInterface {
     url: string;
   }
 
-const requestPokemon = async (maxPokemons : number) => {
+const requestPokemon = async (maxPokemons : number , offseat : number) => {
     try {
-        const response = await fetch(`https://pokeapi.co/api/v2/pokemon?limit=${maxPokemons}`);
+        const response = await fetch(`https://pokeapi.co/api/v2/pokemon?limit=${maxPokemons}&offset=${offseat}`);
       
         if (response.ok) {
           const result : requestPokemonInterface = await response.json();
