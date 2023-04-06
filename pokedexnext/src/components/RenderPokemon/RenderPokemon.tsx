@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
 import CardPokemon from "../CardPokemon/CardPokemon";
+import SliderSwiperFilter from "../SliderSwiperFilter/SliderSwiperFilter";
 import styles from "./RenderPokemon.module.css";
 import requestPokemon from "./utils/requestPokemon";
+
 interface Pokemon{
     name: string;
     url: string;
@@ -31,6 +33,7 @@ const  RenderPokemon =  () => {
 
     return (
         <>
+            <SliderSwiperFilter/>
             <div className={styles.containerRenderPokemons}>
                 {result.map((pokemon, index) => {
                     return (
@@ -41,6 +44,7 @@ const  RenderPokemon =  () => {
             <div className={styles.buttonContainerLoading}>
                 <button className={styles.buttonLoading} onClick={handleLoadMore}>Carregar mais...</button>
             </div>
+
         </>
   )
 }

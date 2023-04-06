@@ -69,6 +69,24 @@ const TypesPokemons = ({typePokemon} : TypesPokemonsProps) => {
           title: "fairy",
           imageUrl: "/PokemonsTypes/fairy.svg",
           color: "#ffb6c1"
+        },
+        {
+          type: "rock",
+          title: "rock",
+          imageUrl: "/PokemonsTypes/rock.svg",
+          color: "#2A1600"
+        },
+        {
+          type: "fighting",
+          title: "fighting",
+          imageUrl: "/PokemonsTypes/fighting.svg",
+          color: "#7600D2"
+        },
+        {
+          type: "ghost",
+          title: "ghost",
+          imageUrl: "/PokemonsTypes/ghost.svg",
+          color: "#202429"
         }
       ]
       

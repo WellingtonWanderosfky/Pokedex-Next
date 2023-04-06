@@ -1,10 +1,12 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import ButtonDetalhes from "../ButtonDetalhes/ButtonDetalhes";
+import Spinner from "../Spinner/Spinner";
 import TypesPokemons from "../TypesPokemons/TypesPokemons";
 import styles from "./CardPokemon.module.css";
 import Blur from "./effects/blur";
 import { Pokemonrequest } from "./typings/RequestPokemon";
+
 
 interface CardPokemonProps {
   name: string;
@@ -42,29 +44,34 @@ const CardPokemon = ({ name, url }: CardPokemonProps) => {
   console.log("result:", result);
 
   return (
-    <div className={styles.containerCard}>
-      <img
-          className={styles.containerImg}
-          src={srcImg}
-          alt="pokemon"
-          width="100px"
-          height="100px"
-        />
-      <div className={styles.containerPokemon}>
-        <div className={styles.containerText}>
-          <span className={styles.spanId}>#{id}</span>
-          <h2 className={styles.titlePokemon}>{name}</h2>
-          <span>{type}</span>
-          {loading ? (
-            <p>Carregando...</p>
-          ) : (
-            <TypesPokemons typePokemon={type} />
-          )}
+    <>
+      {loading ? <Spinner/> : (
+          <div className={styles.containerCard}>
+          <img
+              className={styles.containerImg}
+              src={srcImg}
+              width={100}
+              alt="Pokemon Image"
+              height={100}
+            />
+          <div className={styles.containerPokemon}>
+            <div className={styles.containerText}>
+              <span className={styles.spanId}>#{id}</span>
+              <h2 className={styles.titlePokemon}>{name}</h2>
+              <span>{type}</span>
+              {loading ? (
+                <p>Carregando...</p>
+              ) : (
+                <TypesPokemons typePokemon={type} />
+              )}
+            </div>
+            {loading ? <p>Carregando...</p> : <ButtonDetalhes typePokemon={type}></ButtonDetalhes>}
+            {loading ? <p>Carregando...</p> : <Blur typesPokemon={type}></Blur>}
+          </div>
         </div>
-        {loading ? <p>Carregando...</p> : <ButtonDetalhes typePokemon={type}></ButtonDetalhes>}
-        {loading ? <p>Carregando...</p> : <Blur typesPokemon={type}></Blur>}
-      </div>
-    </div>
+      )}
+      
+    </>
   );
 };
 

@@ -48,6 +48,24 @@ const Blur = ({typesPokemon} : blurProps) => {
           type: "fairy",
           color: "#ffb6c1"
         },
+        {
+          type: "rock",
+          color: "#2A1600"
+        },
+        {
+          type: "fighting",
+          color: "#7600D2"
+        },
+        {
+          type: "ghost",
+          color: "#202429"
+        },
+        {
+          type: "psychic",
+          title: "psychic",
+          imageUrl: "/PokemonsTypes/psychic.svg",
+          color: "#00A0D2"
+        }
       ]
 
       const filterTypes = types.find((item) => item.type === typesPokemon);
