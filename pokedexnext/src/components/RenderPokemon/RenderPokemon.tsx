@@ -4,7 +4,7 @@ import SliderSwiperFilter from "../SliderSwiperFilter/SliderSwiperFilter";
 import styles from "./RenderPokemon.module.css";
 import requestPokemon from "./utils/requestPokemon";
 
-interface Pokemon{
+export interface Pokemon{
     name: string;
     url: string;
 }
@@ -33,7 +33,11 @@ const  RenderPokemon =  () => {
 
     return (
         <>
-            <SliderSwiperFilter/>
+            <div>  
+                <div className={styles.SliderSwiperFilterSelects}>
+                        <SliderSwiperFilter setResult={setResult}/> 
+                </div>
+            </div>
             <div className={styles.containerRenderPokemons}>
                 {result.map((pokemon, index) => {
                     return (

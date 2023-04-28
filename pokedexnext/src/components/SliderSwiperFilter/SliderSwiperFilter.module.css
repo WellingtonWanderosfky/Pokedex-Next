@@ -1,0 +1,31 @@
+.buttonContainer{
+    color: #fff;
+    border-radius: 8px;
+    padding: 5px 9px;
+    gap: 5px;
+    display: flex;
+    place-self: center;
+    border: none;
+  }
+
+.CarroselSwiperFilter{
+}
+
+.CarroselSwiperFilter :global(.swiper){
+  padding-inline: 20px;
+}
+
+.CarroselSwiperFilter :global(.swiper-slide){
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.CarroselSwiperFilter :global(.swiper-button-next){
+  right: -4px;
+}
+
+.CarroselSwiperFilter :global(.swiper-button-prev){
+  left: -4px;
+}

@@ -47,3 +47,10 @@
         grid-template-columns: 1fr;
     }
 }
+.SliderSwiperFilterSelects{
+    display: flex;
+    margin: auto;
+    flex-direction: column;
+    max-width: 380px;
+    padding-top: 40px;
+}
